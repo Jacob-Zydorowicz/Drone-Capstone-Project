@@ -20,7 +20,7 @@ public:
     {
 	if (severity <= Severity::kWARNING)
 	{
-	    std::cout << "YO DAWG HERES AN ERROR: " << msg << std::endl;
+	    std::cout << "ERROR: " << msg << std::endl;
 	}
     }
 	
@@ -122,7 +122,6 @@ void infer(nvinfer1::IExecutionContext* context, DetectionInfo& info)
     cudaFree(gpu_buffers[0]);
     cudaFree(gpu_buffers[1]);
     cudaFree(gpu_buffers[2]);
-    // so free
 }
 
 
