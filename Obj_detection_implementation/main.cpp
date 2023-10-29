@@ -147,11 +147,9 @@ DetectionInfo pre_process(cv::Mat& image)
 
 int main()
 {
-    
-    Detector detector("yolov3-tiny.engine"); // this is a compiled plan file. It's pretty huge, and can't fit in the github repo unfortunatley, but I have it -- Connor
     cv::VideoCapture camera("nvarguscamerasrc ! video/x-raw(memory:NVMM), width=1280, height=720, format=NV12, framerate=(fraction)30/1 ! nvvidconv flip-method=0 ! video/x-raw, width=1280, height=720, format=BGRx ! videoconvert ! video/x-raw, format=BGR ! appsink", cv::CAP_GSTREAMER);
 
-    std::ifstream stream("Detector/Engines/yolov3-tiny.engine", std::ios::binary);
+    std::ifstream stream("Detector/Engines/yolov3-tiny.engine", std::ios::binary); // this is a compiled plan file. It's pretty huge, and can't fit in the github repo unfortunatley, but I have it -- Connor
     stream.seekg(0, stream.end); // move to eof
     int sz = stream.tellg();
     stream.seekg(0, stream.beg);
