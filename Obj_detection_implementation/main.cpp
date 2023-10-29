@@ -168,7 +168,7 @@ int main()
 	Frame frame;
 	auto t0 = std::chrono::system_clock::now();
 	camera >> frame.original;
-	mark.info = pre_process(frame.original);
+	frame.info = pre_process(frame.original);
 	infer(context, frame.info);
 	post_process(frame);
 	auto t1 = std::chrono::system_clock::now();
